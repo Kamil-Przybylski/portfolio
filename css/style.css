@@ -952,8 +952,18 @@ h6, .h6 {
 
 .parallax-sky {
   background: url("../img/paralax/sky-bg.png") no-repeat fixed;
-  background-size: 100% 100%;
+  background-position-x: center;
   z-index: -22;
+}
+
+.cv-text {
+  position: absolute;
+  width: 100%;
+  text-align: right;
+  padding: 50px;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  font-size: 50px;
 }
 
 .parallax1 {
