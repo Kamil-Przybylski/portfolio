@@ -55,15 +55,9 @@ small, .small {
 }
 
 a {
-    color: #007bff;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
-}
-
-a:hover {
-    color: #0056b3;
-    text-decoration: underline;
 }
 
 figure {

@@ -1,4 +1,5 @@
 (function() {
+
     var scrolled,
         parallax,
         el = document.querySelectorAll('.parallax-animate');
@@ -16,3 +17,16 @@
     });
 
 })();
+/*
+(function() {
+
+    var btn = document.querySelector(".nav-btn");
+
+    console.log(btn);
+
+    btn.addEventListener("click", function() {
+        this.classList.toggle("nav-btn-active");
+    })
+    
+})();
+*/
