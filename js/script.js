@@ -1,23 +1,18 @@
-$( function () {
-    var scrolled;
-    var $window = $(window);
-    var el = $('.parallax-animate');
+(function() {
+    var scrolled,
+        parallax,
+        el = document.querySelectorAll('.parallax-animate');
 
-    $window.on('scroll', function () {
-        scrolled = $(window).scrollTop();
+    window.addEventListener("scroll", function(e) {
+        scrolled = this.pageYOffset;
 
         if (scrolled < 900) {
-            
-            el.each(function () {
-                var parallax = scrolled * $(this).data('speed');
-    
-                $(this).css({
-                    'transform': 'translateY(' + parallax + 'px)'
-                });
-    
-            });  
+            el.forEach(function(ele) {
+                parallax = scrolled * ele.dataset.speed;
+                ele.style.transform = 'translateY(' + parallax + 'px)';
+            })
         }
 
     });
-});
 
+})();
