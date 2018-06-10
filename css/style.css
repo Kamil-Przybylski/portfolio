@@ -12,7 +12,7 @@ $xl: 1200px;
 }
 
 html {
-  font-family: sans-serif;
+  font-family: "Work Sans", sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
@@ -29,8 +29,9 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   line-height: 1.5;
+  letter-spacing: 1.1px;
   color: #1F001A;
   text-align: left;
   background-color: #fff;
@@ -56,6 +57,11 @@ a {
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  color: #007bff;
+}
+
+a:visited {
+  color: #007bff;
 }
 
 figure {
@@ -65,11 +71,6 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
-}
-
-.img-fluid {
-  max-width: 100%;
-  height: auto;
 }
 
 button {
@@ -163,12 +164,12 @@ h6, .h6 {
   margin-left: auto;
 }
 
-.container-h-max {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+.br-b {
+  border-bottom: 1px solid black;
+}
+
+.br-t {
+  border-top: 1px solid black;
 }
 
 .row {
@@ -176,8 +177,6 @@ h6, .h6 {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
 }
 
 .text-left {
@@ -193,7 +192,7 @@ h6, .h6 {
 }
 
 .text-light {
-  color: #ccc !important;
+  color: #ddd !important;
 }
 
 .text-dark {
@@ -922,6 +921,10 @@ h6, .h6 {
   }
 }
 
+.d-flex {
+  display: flex;
+}
+
 .m-0 {
   margin: 0 !important;
 }
@@ -943,103 +946,103 @@ h6, .h6 {
 }
 
 .m-1 {
-  margin: 0.25rem !important;
-}
-
-.mt-1 {
-  margin-top: 0.25rem !important;
-}
-
-.mr-1 {
-  margin-right: 0.25rem !important;
-}
-
-.mb-1 {
-  margin-bottom: 0.25rem !important;
-}
-
-.ml-1 {
-  margin-left: 0.25rem !important;
-}
-
-.m-2 {
-  margin: 0.5rem !important;
-}
-
-.mt-2 {
-  margin-top: 0.5rem !important;
-}
-
-.mr-2 {
-  margin-right: 0.5rem !important;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem !important;
-}
-
-.ml-2 {
-  margin-left: 0.5rem !important;
-}
-
-.m-3 {
   margin: 1rem !important;
 }
 
-.mt-3 {
+.mt-1 {
   margin-top: 1rem !important;
 }
 
-.mr-3 {
+.mr-1 {
   margin-right: 1rem !important;
 }
 
-.mb-3 {
+.mb-1 {
   margin-bottom: 1rem !important;
 }
 
-.ml-3 {
+.ml-1 {
   margin-left: 1rem !important;
 }
 
-.m-4 {
-  margin: 1.5rem !important;
+.m-2 {
+  margin: 2rem !important;
 }
 
-.mt-4 {
-  margin-top: 1.5rem !important;
+.mt-2 {
+  margin-top: 2rem !important;
 }
 
-.mr-4 {
-  margin-right: 1.5rem !important;
+.mr-2 {
+  margin-right: 2rem !important;
 }
 
-.mb-4 {
-  margin-bottom: 1.5rem !important;
+.mb-2 {
+  margin-bottom: 2rem !important;
 }
 
-.ml-4 {
-  margin-left: 1.5rem !important;
+.ml-2 {
+  margin-left: 2rem !important;
 }
 
-.m-5 {
+.m-3 {
   margin: 3rem !important;
 }
 
-.mt-5 {
+.mt-3 {
   margin-top: 3rem !important;
 }
 
-.mr-5 {
+.mr-3 {
   margin-right: 3rem !important;
 }
 
-.mb-5 {
+.mb-3 {
   margin-bottom: 3rem !important;
 }
 
-.ml-5 {
+.ml-3 {
   margin-left: 3rem !important;
+}
+
+.m-4 {
+  margin: 4rem !important;
+}
+
+.mt-4 {
+  margin-top: 4rem !important;
+}
+
+.mr-4 {
+  margin-right: 4rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 4rem !important;
+}
+
+.ml-4 {
+  margin-left: 4rem !important;
+}
+
+.m-5 {
+  margin: 5rem !important;
+}
+
+.mt-5 {
+  margin-top: 5rem !important;
+}
+
+.mr-5 {
+  margin-right: 5rem !important;
+}
+
+.mb-5 {
+  margin-bottom: 5rem !important;
+}
+
+.ml-5 {
+  margin-left: 5rem !important;
 }
 
 .m-auto {
@@ -1072,103 +1075,103 @@ h6, .h6 {
 }
 
 .p-1 {
-  padding: 0.25rem !important;
-}
-
-.pt-1 {
-  padding-top: 0.25rem !important;
-}
-
-.pr-1 {
-  padding-right: 0.25rem !important;
-}
-
-.pb-1 {
-  padding-bottom: 0.25rem !important;
-}
-
-.pl-1 {
-  padding-left: 0.25rem !important;
-}
-
-.p-2 {
-  padding: 0.5rem !important;
-}
-
-.pt-2 {
-  padding-top: 0.5rem !important;
-}
-
-.pr-2 {
-  padding-right: 0.5rem !important;
-}
-
-.pb-2 {
-  padding-bottom: 0.5rem !important;
-}
-
-.pl-2 {
-  padding-left: 0.5rem !important;
-}
-
-.p-3 {
   padding: 1rem !important;
 }
 
-.pt-3 {
+.pt-1 {
   padding-top: 1rem !important;
 }
 
-.pr-3 {
+.pr-1 {
   padding-right: 1rem !important;
 }
 
-.pb-3 {
+.pb-1 {
   padding-bottom: 1rem !important;
 }
 
-.pl-3 {
+.pl-1 {
   padding-left: 1rem !important;
 }
 
-.p-4 {
-  padding: 1.5rem !important;
+.p-2 {
+  padding: 2rem !important;
 }
 
-.pt-4 {
-  padding-top: 1.5rem !important;
+.pt-2 {
+  padding-top: 2rem !important;
 }
 
-.pr-4 {
-  padding-right: 1.5rem !important;
+.pr-2 {
+  padding-right: 2rem !important;
 }
 
-.pb-4 {
-  padding-bottom: 1.5rem !important;
+.pb-2 {
+  padding-bottom: 2rem !important;
 }
 
-.pl-4 {
-  padding-left: 1.5rem !important;
+.pl-2 {
+  padding-left: 2rem !important;
 }
 
-.p-5 {
+.p-3 {
   padding: 3rem !important;
 }
 
-.pt-5 {
+.pt-3 {
   padding-top: 3rem !important;
 }
 
-.pr-5 {
+.pr-3 {
   padding-right: 3rem !important;
 }
 
-.pb-5 {
+.pb-3 {
   padding-bottom: 3rem !important;
 }
 
-.pl-5 {
+.pl-3 {
   padding-left: 3rem !important;
+}
+
+.p-4 {
+  padding: 4rem !important;
+}
+
+.pt-4 {
+  padding-top: 4rem !important;
+}
+
+.pr-4 {
+  padding-right: 4rem !important;
+}
+
+.pb-4 {
+  padding-bottom: 4rem !important;
+}
+
+.pl-4 {
+  padding-left: 4rem !important;
+}
+
+.p-5 {
+  padding: 5rem !important;
+}
+
+.pt-5 {
+  padding-top: 5rem !important;
+}
+
+.pr-5 {
+  padding-right: 5rem !important;
+}
+
+.pb-5 {
+  padding-bottom: 5rem !important;
+}
+
+.pl-5 {
+  padding-left: 5rem !important;
 }
 
 .w-25 {
@@ -1320,8 +1323,8 @@ h6, .h6 {
 }
 
 body {
-  background-color: #2f0c29;
-  color: #ccc;
+  background-color: #1c1c24;
+  color: #ddd;
 }
 
 .navigation {
@@ -1386,7 +1389,7 @@ body {
 }
 
 .nav-header {
-  color: #ccc;
+  color: #ddd;
   margin-bottom: 30px;
 }
 
@@ -1398,5 +1401,35 @@ body {
 .nav-item {
   margin: 20px 0;
   text-align: center;
+}
+
+.img-me {
+  border-radius: 50%;
+  height: 200px;
+  box-shadow: 0px 0px 20px #111;
+}
+
+.img-about {
+  border: 10%;
+  box-shadow: 0px 0px 20px #111;
+}
+
+.article1 {
+  background-color: #6b0228;
+  text-shadow: 2px 2px 10px #111;
+  border-top: 1px solid #7b062f;
+  border-left: 1px solid #7b062f;
+  box-shadow: 1px 1px 15px #000;
+}
+
+.article1 p {
+  margin-bottom: 15px;
+}
+
+.rectangle {
+  display: inline-block;
+  width: 25px;
+  height: 20px;
+  background-color: #6b0228;
 }
 /*# sourceMappingURL=style.css.map */
