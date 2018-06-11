@@ -177,18 +177,16 @@ h6, .h6 {
 
 .container-fluid {
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }
 
 .br-b {
-    border-bottom: 1px solid rgba($color: #000, $alpha: 1);
+    border-bottom: 1px solid rgba($color: #000, $alpha: 0.5);
 }
 
 .br-t {
-    border-top: 1px solid rgba($color: #000, $alpha: 1);
+    border-top: 1px solid rgba($color: #000, $alpha: 0.5);
 }
 
 ////////////////////

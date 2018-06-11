@@ -17,16 +17,22 @@
     });
 
 })();
-/*
+
 (function() {
 
-    var btn = document.querySelector(".nav-btn");
-
-    console.log(btn);
+    var btn = document.querySelector(".nav-btn"),
+        navbar = document.querySelector("#navbar"),
+        cls = "nav-btn-active";
 
     btn.addEventListener("click", function() {
-        this.classList.toggle("nav-btn-active");
+        this.classList.toggle(cls);
+
+        if (this.classList.contains(cls)) {
+            navbar.classList.remove("d-none")
+        } else {
+            navbar.classList.add("d-none")
+        }
+
     })
     
 })();
-*/
