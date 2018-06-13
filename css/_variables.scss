@@ -1,14 +1,11 @@
 //default colors
 
-//$color-main: #2f0c29;
 $color-main: #1c1c24;
-$color-main-dark: #1c1c24;
-$color-second: #ff745d;
-$color-second-dark: #ed5d45;
-$color-third: #db2e3c;
-$color-third-dark: #cc2330;
-$color-fourth: #7b062f;
-$color-fourth-dark: #6b0228;
+$color-main-light: lighten( $color-main, 1.2% );
+
+$color-second: #7b062f;
+$color-second-dark: darken($color-second, 5%);
+
 $color2: #41193B;
 $color3: #286C00;
 $color4: #82001E;
@@ -16,25 +13,15 @@ $color5: #310760;
 $color6: #7C7400;
 $color7: #640054;
 
-/*
-//sizes
-$sm: 576px;
-$md: 768px;
-$lg: 992px;
-$xl: 1200px;
-*/
-
 //font
 
 $font: 'Work Sans', sans-serif;
-//$font-size: 1rem;
-$font-size: 1.1rem;
-$letter-space: 1.1px;
+$font-size: 0.9rem;
+$letter-space: 1.3px;
 
 $font-color: #1F001A;
 $font-color: #1F001A;
 $font-small: 80%;
-//$text-light: #f8f9fa;
 $text-light: #ddd;
 $text-dark: #343a40;
 $text-muted: #6c757d;
@@ -43,3 +30,10 @@ $text-muted: #6c757d;
 
 $aColor: #007bff;
 $aColorHover: #0056b3;
+
+//button
+$color-btn: #286C00;
+$color-btn-bd: darken($color-btn, 5%);
+$color-btn-hover: lighten($color-btn, 5%);
+$color-btn-hover-bd: red;
+

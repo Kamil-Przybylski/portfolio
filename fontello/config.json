@@ -7,16 +7,58 @@
   "ascent": 850,
   "glyphs": [
     {
-      "uid": "474656633f79ea2f1dad59ff63f6bf07",
-      "css": "star",
-      "code": 59392,
+      "uid": "7cb7e246fd23672429db603c0077dc79",
+      "css": "mail-circled",
+      "code": 59393,
+      "src": "elusive"
+    },
+    {
+      "uid": "8669af50382b53c48b9b803692828dd0",
+      "css": "github-circled-alt2",
+      "code": 61526,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "b2178b8fca35bac9e4bfcea4a4c05a92",
+      "css": "linkedin-circled-1",
+      "code": 59394,
+      "src": "typicons"
+    },
+    {
+      "uid": "33cea6d7bd699348c0d593e105361a51",
+      "css": "facebook-circled-1",
+      "code": 59395,
+      "src": "typicons"
+    },
+    {
+      "uid": "23a1de57eb7b0c8281656a3ddadf3ee3",
+      "css": "phone-circled",
+      "code": 59396,
+      "src": "elusive"
+    },
+    {
+      "uid": "9c9f0a69d4abbeb5ff9d779df7679356",
+      "css": "question-circle-o",
+      "code": 62108,
       "src": "fontawesome"
     },
     {
-      "uid": "d17030afaecc1e1c22349b99f3c4992a",
+      "uid": "b392c847bf41826598f12c02be842253",
+      "css": "star",
+      "code": 59392,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "ee382df412dfdf65191b52ae33160abc",
       "css": "star-empty",
-      "code": 59393,
-      "src": "fontawesome"
+      "code": 59397,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "05a2f4c4839012434774cc1ceb4c0f9b",
+      "css": "download-alt",
+      "code": 59398,
+      "src": "elusive"
     }
   ]
 }
