@@ -59,6 +59,12 @@
       "css": "download-alt",
       "code": 59398,
       "src": "elusive"
+    },
+    {
+      "uid": "9bc2902722abb366a213a052ade360bc",
+      "css": "spin6",
+      "code": 59449,
+      "src": "fontelico"
     }
   ]
 }

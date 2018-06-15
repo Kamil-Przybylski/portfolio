@@ -25,9 +25,9 @@ body {
   font-size: 0.9rem;
   line-height: 1.5;
   letter-spacing: 1.3px;
-  color: #1F001A;
   text-align: left;
-  background-color: #fff;
+  background-color: #1c1c24;
+  color: #ddd;
 }
 
 p, ol, ul, dl {
@@ -970,6 +970,30 @@ h6, .h6 {
   }
 }
 
+@media (min-width: 576px) {
+  .d-to-xs-none {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .d-to-sm-none {
+    display: none !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .d-to-md-none {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .d-to-lg-none {
+    display: none !important;
+  }
+}
+
 .d-flex {
   display: flex;
 }
@@ -1407,15 +1431,68 @@ h6, .h6 {
   border-radius: 0.25rem;
 }
 
-.container-parallax-max {
-  padding: 0;
-  overflow: hidden;
-  transform: translateY();
-  height: 100vh;
-  width: 100vw;
+#preloader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: #630526;
+  opacity: 1;
+  transition: opacity 1s ease;
 }
 
-.container-parallax {
+.preloader-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.load {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+}
+
+.icon-spin {
+  animation: loading 1s linear infinite;
+}
+
+.preloader-fade {
+  opacity: 0 !important;
+}
+
+.proba {
+  width: 500px;
+  height: 500px;
+  background: #000;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container-max {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container-header {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.parallax-container {
   position: relative;
   height: 100%;
   width: 100%;
@@ -1425,9 +1502,6 @@ h6, .h6 {
   position: absolute;
   width: 100%;
   height: 100%;
-  margin: 0 auto;
-  background-position-y: bottom;
-  background-size: cover;
 }
 
 .parallax-sky {
@@ -1446,6 +1520,8 @@ h6, .h6 {
   font-size: 50px;
   color: #fff;
   text-shadow: 1px 1px 1px #000;
+  top: 2%;
+  right: 2%;
 }
 
 .info {
@@ -1551,9 +1627,10 @@ h6, .h6 {
   z-index: -11;
 }
 
-body {
-  background-color: #1c1c24;
-  color: #ddd;
+.mobile-parallax {
+  width: 100%;
+  height: 100%;
+  background: url("../img/paralax/mobile.png") no-repeat local tops;
 }
 
 .navigation {

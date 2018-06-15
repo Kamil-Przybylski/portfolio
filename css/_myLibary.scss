@@ -33,9 +33,9 @@ body {
     font-size: $font-size;
     line-height: 1.5;
     letter-spacing: $letter-space;
-    color: $font-color;
     text-align: left;
-    background-color: #fff;
+    background-color: $color-main;
+    color: $text-light;
 }
 
 p, ol, ul, dl {
@@ -1007,6 +1007,30 @@ h6, .h6 {
 
 @media (max-width: 1200px) {
     .d-lg-none {
+      display: none !important;
+    }
+}
+
+@media (min-width: 576px) {
+    .d-to-xs-none {
+      display: none !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .d-to-sm-none {
+      display: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .d-to-md-none {
+      display: none !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .d-to-lg-none {
       display: none !important;
     }
 }
