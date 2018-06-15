@@ -1,17 +1,13 @@
 //default colors
 
 $color-main: #1c1c24;
-$color-main-light: lighten( $color-main, 1.2% );
+$color-main-2: lighten( $color-main, 1.2% );
 
 $color-second: #7b062f;
-$color-second-dark: darken($color-second, 5%);
+$color-second-2: darken($color-second, 5%);
 
-$color2: #41193B;
-$color3: #286C00;
-$color4: #82001E;
-$color5: #310760;
-$color6: #7C7400;
-$color7: #640054;
+$color-menu: #7b062f;
+$color-menu-2: darken($color-second, 5%);
 
 //font
 
