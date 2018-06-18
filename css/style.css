@@ -1006,6 +1006,10 @@ h6, .h6 {
   position: relative !important;
 }
 
+.o-hidden {
+  overflow: hidden !important;
+}
+
 .m-0 {
   margin: 0 !important;
 }
