@@ -240,6 +240,10 @@ h6, .h6 {
   text-align: center;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 @media (min-width: 768px) {
   .text-mobile {
     font-size: 1.1rem !important;
@@ -1411,6 +1415,10 @@ h6, .h6 {
   height: auto !important;
 }
 
+*:focus {
+  outline: unset;
+}
+
 .special-font {
   font-family: 'Dancing Script', cursive;
 }
@@ -1481,9 +1489,14 @@ h6, .h6 {
 }
 
 .container-max {
-  height: 100vh;
   width: 100%;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .container-max {
+    height: 100vh;
+  }
 }
 
 .container-header {
@@ -1627,12 +1640,6 @@ h6, .h6 {
   z-index: -11;
 }
 
-.mobile-parallax {
-  width: 100%;
-  height: 100%;
-  background: url("../img/paralax/mobile.png") no-repeat local tops;
-}
-
 .navigation {
   position: fixed;
   z-index: 100;
@@ -1699,9 +1706,17 @@ h6, .h6 {
   margin-bottom: 30px;
 }
 
+.nav-header > a {
+  color: #ddd;
+}
+
 .nav {
   list-style: none;
   padding: 0;
+}
+
+.nav li > a {
+  color: #ddd;
 }
 
 .nav-item {
@@ -1780,6 +1795,7 @@ h6, .h6 {
   border-radius: 0.25rem;
   min-width: 250px;
   width: 100%;
+  overflow: hidden;
 }
 
 .card-1 {
@@ -1816,7 +1832,8 @@ h6, .h6 {
   min-height: 439px;
   height: 100%;
   background-color: rgba(123, 6, 47, 0.8);
-  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 0.8s ease;
 }
 
 @media (min-width: 992px) {
@@ -1832,7 +1849,7 @@ h6, .h6 {
 }
 
 .card:hover > .card-body {
-  opacity: 1;
+  transform: translateX(0);
 }
 
 .card-footer {
@@ -1867,7 +1884,7 @@ h6, .h6 {
 .form-item {
   width: 100%;
   padding: 0.5rem 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.5;
   color: #495057;
   background-color: #fff;

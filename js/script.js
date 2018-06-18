@@ -1,14 +1,17 @@
+'use strict';
 // Preloader
 
 (function() {
-    var preloader = document.querySelector("#preloader");
+    var preloader = document.querySelector("#preloader"),
+        animation = preloader.dataset.animation;
 
-    window.onload = function () {
-        preloader.classList.add("fadeOut");
+    window.addEventListener("load", function() {
+        preloader.classList.add(animation);
         preloader.addEventListener("animationend", function() {
+            preloader.classList.remove(animation);
             preloader.classList.add("d-none");
         });
-    };
+    })
 
 })();
 
@@ -42,9 +45,9 @@
         navbar = document.querySelector("#navbar"),
         clsBtn = "nav-btn-active",
         dNone = "d-none",
-        clsIn = "fadeInLeft",
-        clsOut = "fadeOutLeft",
-        leverIn = true;
+        clsIn = "tdFadeInRight",
+        clsOut = "tdFadeOutLeft",
+        leverIn = true,
         leverOut = false;
 
     navbar.addEventListener("animationend", function() {
@@ -78,5 +81,65 @@
 // SCROLL REVEAL
 
 (function() {
+
+    var items = document.querySelectorAll("[data-animation]");
+
+    function revealOnScroll() {
+        var scrolled = window.scrollY,
+            win_height_padded = window.innerHeight;
+
+        items.forEach(function(i){
+            var offsetTop = i.offsetTop,
+                animation = i.dataset.animation,
+                repeat = i.dataset.repeat,
+                itemHeight = i.clientHeight;
+
+            if ((scrolled + win_height_padded >= offsetTop)
+            &&
+            (scrolled <= offsetTop + itemHeight)) {
+                i.classList.add(animation);
+            }else if(repeat) {
+                i.classList.remove(animation);
+            }
+
+        })
+
+    }
   
+    window.addEventListener("load", function() {
+        window.addEventListener("scroll", revealOnScroll)
+    });
+
+})();
+
+// anchors
+
+(function() {
+
+    var anchors = document.querySelectorAll("a[href*='section']");
+
+    window.addEventListener("animationend", function(e) {
+
+    });
+
+    anchors.forEach(function(item) {
+        item.addEventListener("click", function(e){
+            e.preventDefault();
+
+            var target = item.hash,
+                obj = document.querySelector(target),
+                posObj = obj.offsetTop;
+
+            window.scroll({
+                top: posObj,
+                left: 0,
+                behavior: "smooth"
+            });
+
+            obj.setAttribute("tabindex", -1);
+            obj.focus({preventScroll: true});
+
+        })
+    })
+
 })();

@@ -14,8 +14,8 @@
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="fontello/css/fontello.css">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/tuesday.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 
 </head>
 
@@ -25,7 +25,7 @@
         <p class="browsehappy">Używasz <strong>przestarzałej</strong> przeglądarki. Proszę <a href="https://www.google.pl/chrome/index.html">uaktualnij swoją przeglądarke</a> aby strona wyświetlała się poprawnie</p>
     <![endif]-->
 
-    <div id="preloader" class="animated">
+    <div id="preloader" class="animated" data-animation="tdFadeOut">
         <div class="preloader-title text-center cv-text special-font">
             <p class="h3">Curriculum Vitae</p>
             <p class="h4">Kamil Przybylski</p>
@@ -38,7 +38,7 @@
         </div>
     </div>
 
-    <header>
+    <header id="section0">
 
         <div class="container-max">
             <div class="container-header">
@@ -54,7 +54,9 @@
                     <div class="parallax parallax8 parallax-animate" data-speed="0.1"></div>
                     <div class="parallax parallax9"></div>
                 </div>
-                <div class="mobile-parallax d-to-sm-none"></div>
+                <div class="mobile-parallax d-to-sm-none">
+                    <img src="img/paralax/mobile.png" alt="mobile-parallax" class="img-responsive">
+                </div>
                 <div class="cv-text special-font">
                     <p class="h1">Curriculum Vitae</p>
                     <p>Kamil Przybylski</p>
@@ -69,12 +71,12 @@
 
         <nav class="navigation">
             <div id="navbar" class="navbar animated d-none">
-                <p class="nav-header h2 special-font">Kamil Przybylski</p>
+                <p class="nav-header h2 special-font"><a href="#section0">Kamil Przybylski</a></p>
                 <ul class="nav">
-                    <li class="nav-item">O mnie</li>
-                    <li class="nav-item">Technologie</li>
-                    <li class="nav-item">Portfolio</li>
-                    <li class="nav-item">Kontakt</li>
+                    <li class="nav-item"><a href="#section1">O mnie</a></li>
+                    <li class="nav-item"><a href="#section2">Technologie</a></li>
+                    <li class="nav-item"><a href="#section3">Portfolio</a></li>
+                    <li class="nav-item"><a href="#section4">Kontakt</a></li>
                 </ul>
             </div>
             <button class="nav-btn"></button>
@@ -86,9 +88,9 @@
 
         <!-- ABOUT ME -->
 
-        <article class="article1 container-fluid pt-1 pb-1 mb-5 bg-color-second-dark">
+        <article id="section1" class="article1 container-fluid pt-1 pb-1 mb-5 bg-color-second-dark">
 
-            <div class="container">
+            <div class="container animated" data-animation="tdExpandIn" data-repeat="true">
                 <div class="text-center m-1 br-b">
                     <h2 class="mh-auto">O mnie</h2>
                 </div>
@@ -110,7 +112,7 @@
 
         <article class="container mb-5 p-0">
             
-            <section class="row col-12 mv-3 ph-0 pv-1 br-b bg-light">
+            <section class="row col-12 mv-3 ph-0 pv-1 br-b bg-light animated" data-animation="tdFadeInRight" data-repeat="true">
                 <div class="col-lg-6 p-1">
                     <img src="img/education.jpeg" alt="education" class="img-about img-responsive w-100">
                 </div>
@@ -121,7 +123,7 @@
                 </div>
             </section>
 
-            <section class=" row col-lg-12 mv-3 ph-0 pv-1 br-b bg-light">
+            <section class=" row col-lg-12 mv-3 ph-0 pv-1 br-b bg-light animated" data-animation="tdFadeInLeft" data-repeat="true">
                 <div class="col-lg-6 text-right p11">
                     <h3 class="mb-1">Zawód<span class="rectangle ml-1 bg-color-second-dark"></span></h3>
                     <p>Po studiach rozpocząłem prace jako asystent projektanta konstrukcji w biurze projektowym KB-Projekty Konstrukcyjne. Zajmowałem się obliczeniami statycznymi konstrukcji, rysunkami budowlanymi i wykonawczymi oraz ekspertyzami.</p>
@@ -132,7 +134,7 @@
                 </div>
             </section>
 
-            <section class=" row col-12s mv-0 ph-0 pv-1 br-b bg-light">
+            <section class=" row col-12s mv-0 ph-0 pv-1 br-b bg-light animated" data-animation="tdFadeInRight" data-repeat="true">
                 <div class="col-lg-6 p-1">
                     <img src="img/programming.jpg" alt="education" class="img-about img-responsive w-100">
                 </div>
@@ -147,7 +149,7 @@
 
         <!-- MY TECHNOLOGIES -->
 
-        <article class="container-fluid mb-5">
+        <article id="section2" class="container-fluid mb-5">
 
             <header class="mb-1">
                 <h2 class="text-center br-b pb-1">Technologie</h2>
@@ -156,7 +158,7 @@
             <div class="article2">
                 <div class="technologies-container row j-c-around">
 
-                    <div class="col-lg-3s p-1">
+                    <div class="col-lg-3s p-1 animated" data-animation="tdShrinkIn" data-repeat="true">
                         <div class="technologies text-center p-1">
                             <div class="img-technologies">
                                 <img src="img/technologies/html5.png" alt="html5">
@@ -168,7 +170,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3s p-1">
+                    <div class="col-lg-3s p-1 animated" data-animation="tdShrinkIn" data-repeat="true">
                         <div class="technologies text-center p-1">
                             <div class="img-technologies">
                                 <img src="img/technologies/css3.png" alt="css3">
@@ -180,7 +182,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3s p-1">
+                    <div class="col-lg-3s p-1 animated" data-animation="tdShrinkIn" data-repeat="true">
                         <div class="technologies text-center p-1">
                             <div class="img-technologies">
                                 <img src="img/technologies/js.png" alt="js">
@@ -192,7 +194,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3s p-1">
+                    <div class="col-lg-3s p-1 animated" data-animation="tdShrinkIn" data-repeat="true">
                         <div class="technologies text-center p-1">
                             <div class="img-technologies">
                                 <img src="img/technologies/jQuery.png" alt="jQuery">
@@ -204,7 +206,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3s p-1">
+                    <div class="col-lg-3s p-1 animated" data-animation="tdShrinkIn" data-repeat="true">
                         <div class="technologies text-center p-1">
                             <div class="img-technologies">
                                 <img src="img/technologies/Vue.png" alt="Vue.js">
@@ -216,7 +218,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3s p-1">
+                    <div class="col-lg-3s p-1 animated" data-animation="tdShrinkIn" data-repeat="true">
                         <div class="technologies text-center p-1">
                             <div class="img-technologies">
                                 <img src="img/technologies/Sass.png" alt="SASS">
@@ -228,7 +230,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3s p-1">
+                    <div class="col-lg-3s p-1 animated" data-animation="tdShrinkIn" data-repeat="true">
                         <div class="technologies text-center p-1">
                             <div class="img-technologies">
                                 <img src="img/technologies/Bootstrap.png" alt="Bootstrap">
@@ -240,7 +242,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3s p-1">
+                    <div class="col-lg-3s p-1 animated" data-animation="tdShrinkIn" data-repeat="true">
                         <div class="technologies text-center p-1">
                             <div class="img-technologies">
                                 <img src="img/technologies/Git.png" alt="Git">
@@ -252,7 +254,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3s p-1">
+                    <div class="col-lg-3s p-1 animated" data-animation="tdShrinkIn" data-repeat="true">
                         <div class="technologies text-center p-1">
                             <div class="img-technologies">
                                 <img src="img/technologies/vsc.png" alt="Visual Studio Code">
@@ -264,9 +266,9 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3s p-1">
+                    <div class="col-lg-3s p-1 animated" data-animation="tdShrinkIn" data-repeat="true">
                         <div class="technologies text-center p-1">
-                            <div class="img-technologies">
+                            <div class="img-technologies ">
                                 <img src="img/technologies/gulp.png" alt="gulp" class="img-responsive">
                             </div>
                             <div class="description p-1">
@@ -276,7 +278,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3s p-1">
+                    <div class="col-lg-3s p-1 animated" data-animation="tdShrinkIn" data-repeat="true">
                         <div class="technologies text-center p-1">
                             <div class="img-technologies">
                                 <img src="img/technologies/webpack.png" alt="webpack">
@@ -293,22 +295,22 @@
         </article>
 
 
-        <article class="container mv-2 bg-light p-1 mb-5">
+        <article id="section3" class="container mv-2 bg-light p-1 mb-5">
 
-            <header class="br-b">
+            <header class="br-b animated1" data-animation="tdExpandIn" data-repeat="true">
                 <h2 class="text-center pb-1">Portfolio</h2>
             </header>
 
             <div class="row">
 
-                <div class="col-12 p-1">
-                    <div class="card card-1 p-relative text-center">
+                <div class="col-12 p-1 animated" data-animation="tdExpandIn" data-repeat="true">
+                    <div class="card card-1 p-relative text-justify">
                         <div class="card-body p-1">
-                            <div class="br-b mh-1 pb-1">
+                            <div class="br-b mh-1 pb-1 text-center">
                                 <h4>KB-Projekty Konstrukcyjne</h4>
                             </div>
                             <div class="ph-2">
-                                <p>Pierwszy projekt mojego autorstwa. Jest to przerobiona strona firmy w której pracowałem www.kb-projekty.com.pl, stworzyłem ją jedynie w celach edukacyjnych w których wykorzystałem HTML5 oraz CSS3 z SASS (bez żadnych bibliotek) i jQuery w celu nauczenia się podstaw tych technologii. Aktualnie jest niedokończona ze względu na kolejne projekty nad którymi pracuje.</p>
+                                <p>Pierwszy projekt mojego autorstwa. Jest to przerobiona strona firmy w której pracowałem www.kb-projekty.com.pl, stworzyłem ją jedynie w celach edukacyjnych w których wykorzystałem HTML5 oraz CSS3 z SASS (bez żadnych bibliotek) i jQuery aby nauczyć się podstaw tych technologii. Aktualnie jest niedokończona ze względu na kolejne projekty nad którymi pracuje.</p>
                             </div>
                             <div class="card-footer">
                                 <small>HTML5 CSS3 SASS jQuery</small>
@@ -318,10 +320,10 @@
                     </div>
                 </div>
 
-                <div class="col-12 p-1">
-                    <div class="card card-2 p-relative text-center">
+                <div class="col-12 p-1 animated" data-animation="tdExpandIn" data-repeat="true">
+                    <div class="card card-2 p-relative text-justify">
                         <div class="card-body p-1">
-                            <div class="br-b mh-1 pb-1">
+                            <div class="br-b mh-1 pb-1 text-center">
                                 <h4>L.E.H low energy House</h4>
                             </div>
                             <div class="ph-2">
@@ -335,31 +337,31 @@
                     </div>
                 </div>
 
-                <div class="col-12 p-1">
-                    <div class="card card-3 p-relative text-center">
+                <div class="col-12 p-1 animated" data-animation="tdExpandIn" data-repeat="true">
+                    <div class="card card-3 p-relative text-justify">
                         <div class="card-body p-1">
-                            <div class="br-b mh-1 pb-1">
+                            <div class="br-b mh-1 pb-1 text-center">
                                 <h4>Portfolio</h4>
                             </div>
                             <div class="ph-2">
-                                <p>Projekt strony portfolio został wykonany w technologii HTML5 oraz CSS3 do którego stworzyłem własną bibliotekę styli inspirując się wcześniej poznanym Bootstrapem. Przy jej realizacji wykorzystałem Vue.js w celach edukacyjnych.</p>
+                                <p>Projekt strony portfolio został wykonany w technologii HTML5 oraz CSS3 do którego stworzyłem własną bibliotekę styli inspirując się wcześniej poznanym Bootstrapem. Przy jej realizacji użylem czystego JavaScript'u bez dodatkowych pluginów.</p>
                             </div>
                             <div class="card-footer">
-                                <small>HTML5 CSS3 SASS Vue.js</small>
+                                <small>HTML5 CSS3 SASS JS</small>
                                 <button class="btn btn-prim mt-1"><a href="#">Zobacz</a></button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-12 p-1">
-                    <div class="card card-4 p-relative text-center">
+                <div class="col-12 p-1 animated" data-animation="tdExpandIn" data-repeat="true">
+                    <div class="card card-4 p-relative text-justify">
                         <div class="card-body p-1">
-                            <div class="br-b mh-1 pb-1">
+                            <div class="br-b mh-1 pb-1 text-center">
                                 <h4>Autorskie aplikacje</h4>
                             </div>
                             <div class="ph-2">
-                                <p>Jest to podstrona zawierająca moje autorskie aplikacje do których wykorzystuję różne technologię od czystego JavaScript'u do jQuery oraz Vue.js. Planuje na bierząco dodawać kolejne projekty.</p>
+                                <p>Jest to podstrona zawierająca moje autorskie aplikacje do których wykorzystuję różne technologię od czystego JavaScript'u przez jQuery do Vue.js. Planuje na bierząco dodawać kolejne projekty.</p>
                             </div>
                             <div class="card-footer">
                                 <small>JavaScript jQuery Vue.js</small>
@@ -375,10 +377,10 @@
 
     </main>
 
-    <footer class="container-fluid bg-color-second-dark">
+    <footer id="section4" class="container-fluid bg-color-second-dark">
         <div class="container row">
 
-            <div class="row pt-2 w-100">
+            <div class="row pt-2 w-100 animated1" data-animation="tdFadeIn" data-repeat="true">
 
                 <div class="col-md-6">
                     <h4 class="mb-1">Kontakt:</h4>
@@ -411,7 +413,7 @@
 
             </div>
 
-            <div class="row pv-1 w-100">
+            <div class="row pv-1 w-100 animated1" data-animation="tdFadeIn" data-repeat="true">
 
                 <div class="portals col-md-6">
                     <h6 class="mb-1">Znajdziesz mnie na:</h6>
@@ -433,7 +435,7 @@
                 </div>
     
                 <div class="col-md-6">
-                    <p>Przyjmuję oferty pracy na stanowisko (junior) front-end developer. Podejmę się pracy na pełen lub niepełny etat oraz staż.</p>
+                    <p>Przyjmuję oferty pracy na stanowisko (junior) front-end developer. Podejmę się pracy na pełny, niepełny etat lub staż.</p>
                     <p>Strona powstała z wykorzystaniem HTML5 SASS Vue.js oraz autorskiej biblioteki CSS wzorowanej na Bootstrap'ie.</p>
                 </div>
 

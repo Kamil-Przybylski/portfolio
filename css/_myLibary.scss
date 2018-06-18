@@ -275,6 +275,10 @@ h6, .h6 {
     text-align: center;
 }
 
+.text-justify {
+    text-align: justify;
+}
+
 @media (min-width: 768px) {
     .text-mobile {
         font-size: 1.1rem !important;
