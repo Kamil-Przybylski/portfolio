@@ -31,5 +31,5 @@ $aColorHover: #0056b3;
 $color-btn: #286C00;
 $color-btn-bd: darken($color-btn, 5%);
 $color-btn-hover: lighten($color-btn, 5%);
-$color-btn-hover-bd: red;
+$color-btn-hover-bd: $color-btn;
 

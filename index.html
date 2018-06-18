@@ -100,7 +100,7 @@
                         <img src="img/me.jpg" alt="me" class="img-me">
                     </div>
                     <div class="col-lg-9 text-mobile text-lg-left p-1 m-0">
-                        <p>Nazywam się Kamil Przybylski, mam 25 lat i z wykształcenia jestem projektantem konstrukcji budowlanych.</p>
+                        <p>Nazywam się Kamil Przybylski, mieszkam w Krakowie, mam 25 lat i z wykształcenia jestem projektantem konstrukcji budowlanych.</p>
                         <p>Od grudnia przebranżawiam się na Front-End Developer'a, naukę prowadzę we własnym zakresie z kursów internetowych. Aktualnie szukam pracy na stanowisko Junior Front-End Developer'a. Jeżeli poszukujesz takiej osoby to skontaktuj się ze mną!</p>
                         <p class="text-right p-1 m-0"> <small>~ kprzybylski993@gmail.com</small></p>
                 </div>
@@ -396,14 +396,14 @@
     
                 <div class="col-md-6">
                     <h4 class="pb-1 m-0">Napisz do mnie:</h4>
-                    <form class="row">
+                    <form id="contactForm" class="row">
                         <div class="form-group col-12 p-0 pb-1">
-                            <label for="exampleFormControlInput1">Email:</label>
-                            <input type="email" class="form-item" id="exampleFormControlInput1" placeholder="Podaj swój e-mail">
+                            <label for="field-email">Email:</label>
+                            <input type="email" required name="email" id="field-email" class="form-item" placeholder="Podaj swój e-mail">
                         </div>
                         <div class="form-group col-12 p-0 pb-1">
-                            <label for="exampleFormControlTextarea1">Wiadomość:</label>
-                            <textarea class="form-item" id="exampleFormControlTextarea1" placeholder="Napisz wiadomość..." rows="3"></textarea>
+                            <label for="field-message">Wiadomość:</label>
+                            <textarea class="form-item" name="message" id="field-message" placeholder="Napisz wiadomość..." rows="3"></textarea>
                         </div>
                         <div class="col-12 p-0 d-flex j-c-end">
                             <button class="btn btn-prim">Wyślij</button>
