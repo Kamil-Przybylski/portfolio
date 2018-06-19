@@ -26,17 +26,17 @@
 
     function  moveParallax() {
         scrolled = window.pageYOffset;
+        console.log(scrolled);
 
         if (scrolled < 900) {
             el.forEach(function(ele) {
                 parallax = scrolled * ele.dataset.speed;
-                ele.style.transform = 'translateY(' + parallax + 'px)';
+                ele.style.transform = 'translate3d(0, ' + parallax + 'px, 0)';
             })
         }
     }
 
     function onScroll() {
-        
         if(timeout) window.cancelAnimationFrame(timeout);
         timeout = window.requestAnimationFrame(moveParallax);
     }
