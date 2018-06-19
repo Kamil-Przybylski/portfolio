@@ -21,27 +21,40 @@
 
     var scrolled,
         parallax,
-        timeout,
-        el = document.querySelectorAll('.parallax-animate');
-
+        el = document.querySelectorAll('.parallax-animate'),
+        scroll = window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.msRequestAnimationFrame ||
+            window.oRequestAnimationFrame ||
+            function(callback){ window.setTimeout(callback, 1000/60) },
+        lastPos = 0;
+        
     function  moveParallax() {
         scrolled = window.pageYOffset;
-        console.log(scrolled);
 
         if (scrolled < 900) {
             el.forEach(function(ele) {
                 parallax = scrolled * ele.dataset.speed;
-                ele.style.transform = 'translate3d(0, ' + parallax + 'px, 0)';
+                ele.style.transform = 'translateY(' + parallax + 'px)';
             })
         }
     }
 
-    function onScroll() {
-        if(timeout) window.cancelAnimationFrame(timeout);
-        timeout = window.requestAnimationFrame(moveParallax);
+    function loop() {
+        var top = window.pageYOffset;
+        scroll(loop);
+
+        if(top == lastPos) {
+            return
+        } else {
+            moveParallax();
+            lastPos = top;
+        }
+
     }
-    
-    window.addEventListener("scroll", onScroll, false);
+
+    loop();  
 
 })();
 
