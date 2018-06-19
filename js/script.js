@@ -30,14 +30,14 @@
             function(callback){ window.setTimeout(callback, 1000/60) },
         lastPos = 0;
         
-    function  moveParallax() {
+    function  moveParallax() {     
         scrolled = window.pageYOffset;
 
         if (scrolled < 900) {
-            el.forEach(function(ele) {
-                parallax = scrolled * ele.dataset.speed;
-                ele.style.transform = 'translateY(' + parallax + 'px)';
-            })
+            for(var i = 0 ; i < el.length; i++) {
+                parallax = Math.floor(scrolled * el[i].dataset.speed);
+                el[i].style.transform = 'translateY(' + parallax + 'px)';    
+            }
         }
     }
 

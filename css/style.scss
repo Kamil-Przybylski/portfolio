@@ -113,15 +113,17 @@
 
 .parallax {
     position: absolute;
+    backface-visibility: hidden;
+    will-change: scroll-position;
     width: 100%;
     height: 100%;
 }
 
 .parallax-sky {
-    background: url("../img/paralax/sky-bg.png") no-repeat fixed center;
+    background-image: url(../img/paralax/sky-bg.png);
+    background-attachment: fixed;
     background-position-y: bottom;
     background-size: cover;
-    z-index: -22;
 }
 
 .cv-text {
@@ -176,70 +178,72 @@
 
 .info:hover > .info-link {
     display: block;
-}   
+}  
+
 
 .parallax1 {
-    background: url("../img/paralax/1.png") no-repeat local center;
-    background-position-y: bottom;
+    background-image: url("../img/paralax/1.png");
+    background-position: bottom center;
     background-size: cover;
-    z-index: -18;
+    //will-change: transform;
 }
 
 .parallax2 {
-    background: url("../img/paralax/2.png") no-repeat local center;
-    background-position-y: bottom;
+    background-image: url("../img/paralax/2.png");
+    background-position: bottom center;
     background-size: cover;
-    z-index: -18;
+    //will-change: transform;
 }
 
 .parallax3 {
-    background: url("../img/paralax/3.png") no-repeat local center;
-    background-position-y: bottom;
+    background-image: url("../img/paralax/3.png");
+    background-position: bottom center;
     background-size: cover;
-    z-index: -17;
+    //will-change: transform;
 }
 
 .parallax4 {
-    background: url("../img/paralax/4.png") no-repeat local center;
-    background-position-y: bottom;
+    background-image: url("../img/paralax/4.png");
+    background-position: bottom center;
     background-size: cover;
-    z-index: -16;
+    //will-change: transform;
 }
 
 .parallax5 {
-    background: url("../img/paralax/5.png") no-repeat local center;
-    background-position-y: bottom;
+    background-image: url("../img/paralax/5.png");
+    background-position: bottom center;
     background-size: cover;
-    z-index: -15;
+    //will-change: transform;
 }
 
 .parallax6 {
-    background: url("../img/paralax/6.png") no-repeat local center;
-    background-position-y: bottom;
+    background-image: url("../img/paralax/6.png");
+    background-position: bottom center;
     background-size: cover;
-    z-index: -14;
+    //will-change: transform;
 }
 
 .parallax7 {
-    background: url("../img/paralax/7.png") no-repeat local center;
-    background-position-y: bottom;
+    background-image: url("../img/paralax/7.png");
+    background-position: bottom center;
     background-size: cover;
-    z-index: -13;
+    //will-change: transform;
 }
 
 .parallax8 {
-    background: url("../img/paralax/8.png") no-repeat local center;
-    background-position-y: bottom;
+    background-image: url("../img/paralax/8.png");
+    background-position: bottom center;
     background-size: cover;
-    z-index: -12;
+    //will-change: transform;
 }
 
 .parallax9 {
-    background: url("../img/paralax/9.png") no-repeat bottom;
-    background-position-y: bottom;
+    background-image: url("../img/paralax/9.png");
+    background-position: bottom center;
     background-size: cover;
-    z-index: -11;
+    //will-change: transform;
 }
+
 
 // ----------------------------------------------------------------------
 // -------------------------------NAVBAR---------------------------------
