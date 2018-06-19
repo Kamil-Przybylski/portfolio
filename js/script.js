@@ -21,10 +21,11 @@
 
     var scrolled,
         parallax,
+        timeout,
         el = document.querySelectorAll('.parallax-animate');
 
-    window.addEventListener("scroll", function() {
-        scrolled = this.pageYOffset;
+    function  moveParallax() {
+        scrolled = window.pageYOffset;
 
         if (scrolled < 900) {
             el.forEach(function(ele) {
@@ -32,8 +33,15 @@
                 ele.style.transform = 'translateY(' + parallax + 'px)';
             })
         }
+    }
 
-    });
+    function onScroll() {
+        
+        if(timeout) window.cancelAnimationFrame(timeout);
+        timeout = window.requestAnimationFrame(moveParallax);
+    }
+    
+    window.addEventListener("scroll", onScroll, false);
 
 })();
 
