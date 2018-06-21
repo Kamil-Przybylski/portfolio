@@ -316,7 +316,7 @@
                             </div>
                             <div class="card-footer">
                                 <small>HTML5 CSS3 SASS jQuery</small>
-                                <button class="btn btn-prim mt-1"><a href="https://kamil-przybylski.github.io/L.E.H/">Zobacz</a></button>
+                                <button class="btn btn-prim mt-1"><a href="#">Zobacz</a></button>
                             </div>
                         </div>
                     </div>
@@ -333,7 +333,7 @@
                             </div>
                             <div class="card-footer">
                                 <small>HTML5 CSS3 SASS Bootstrap 4</small>
-                                <button class="btn btn-prim mt-1"><a href="https://kamil-przybylski.github.io/L.E.H/">Zobacz</a></button>
+                                <button class="btn btn-prim mt-1"><a href="#">Zobacz</a></button>
                             </div>
                         </div>
                     </div>
@@ -367,7 +367,7 @@
                             </div>
                             <div class="card-footer">
                                 <small>JavaScript jQuery Vue.js</small>
-                                <button class="btn btn-prim mt-1"><a href="https://kamil-przybylski.github.io/L.E.H/">Zobacz</a></button>
+                                <button class="btn btn-prim mt-1"><a href="#">Zobacz</a></button>
                             </div>
                         </div>
                     </div>
@@ -395,20 +395,25 @@
                         <div class="contact-item col-11 p-0"><p>kprzybylski993@gmail.com</p></div>
                     </div>
                 </div>
-    
+
                 <div class="col-md-6">
                     <h4 class="pb-1 m-0">Napisz do mnie:</h4>
-                    <form id="contactForm" class="row">
+                    <form id="contactForm" method="POST" class="row">
                         <div class="form-group col-12 p-0 pb-1">
                             <label for="field-email">Email:</label>
-                            <input type="email" required name="email" id="field-email" class="form-item" placeholder="Podaj swój e-mail">
+                            <input type="email" required name="email" id="field-email" class="form-item" placeholder="Podaj swój e-mail" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" data-error="Podaj prawidłowy adres email">
                         </div>
                         <div class="form-group col-12 p-0 pb-1">
                             <label for="field-message">Wiadomość:</label>
-                            <textarea class="form-item" name="message" id="field-message" placeholder="Napisz wiadomość..." rows="3"></textarea>
+                            <textarea class="form-item" required name="message" id="field-message" placeholder="Napisz wiadomość..." rows="3" data-error="Wypełnij te pole"></textarea>
                         </div>
-                        <div class="col-12 p-0 d-flex j-c-end">
-                            <button class="btn btn-prim">Wyślij</button>
+                        <div class="col-10 p-0">
+                            <div class="fromServer h-100 text-center d-none">
+                                <p>Wysłano wiadomość</p>
+                            </div>
+                        </div>
+                        <div class="col-2 p-0 d-flex j-c-end">
+                            <button type="submit" class="btn btn-prim">Wyślij</button>
                         </div>
                     </form>
                 </div>

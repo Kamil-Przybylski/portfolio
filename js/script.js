@@ -164,3 +164,98 @@
     })
 
 })();
+
+// form
+
+(function() {
+
+    var form = document.querySelector("#contactForm"),
+        inputs = [form.querySelector("#field-email"),form.querySelector("#field-message")];
+
+    form.setAttribute("novalidate", true);
+
+    var displayFieldError = function(elem) {
+        var fieldRow = elem.closest(".form-group"),
+            fieldError = fieldRow.querySelector(".input-error");
+
+        if (fieldError === null) {
+            var errorText = elem.dataset.error,
+                divError = document.createElement('div');
+            divError.classList.add("input-error");
+            divError.innerText = errorText;
+            fieldRow.appendChild(divError);
+        }
+    };
+
+    var hideFieldError = function(elem) {
+        var fieldRow = elem.closest(".form-group"),
+            fieldError = fieldRow.querySelector(".input-error");
+
+        if (fieldError !== null) {
+            fieldError.remove();
+        }
+    };
+
+    inputs.forEach(function(elem) {
+        elem.addEventListener("input", function() {
+            if (!elem.checkValidity()) {
+                elem.classList.add("fieldError");
+            } else {
+                elem.classList.remove("fieldError");
+                hideFieldError(elem);
+            }
+        });
+    });
+
+    var checkFieldsErrors = function(inputs) {
+        var fieldsAreValid = true;
+
+        inputs.forEach(function(elem) {
+            if (elem.checkValidity()) {
+                hideFieldError(elem);
+                elem.classList.remove("error");
+            } else {
+                displayFieldError(elem);
+                elem.classList.add("error");
+                fieldsAreValid = false;
+            }
+        });
+
+        return fieldsAreValid;
+    }
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        
+
+        if (checkFieldsErrors(inputs)) {
+            var elements = [form.querySelector("input:not(:disabled)"), form.querySelector("textarea:not(:disabled)")];
+
+            var dataToSend = new FormData(),
+                dataToSend2 = {};
+            elements.forEach(function(elem) {
+                dataToSend.append(elem.name, elem.value);
+                dataToSend2[elem.name] = elem.value;
+            }); 
+
+            console.log(dataToSend2);
+            var data = JSON.stringify(dataToSend2);
+
+            var btn = document.querySelector("button[type='submit']");
+            btn.setAttribute("disabled", true);
+    
+            var xhr = new XMLHttpRequest(),
+                method = form.getAttribute("method");
+
+            xhr.open(method, "https://formspree.io/kminus13@onet.eu", true);
+            xhr.responseType = "json";
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(data);
+    
+            var info = document.querySelector(".fromServer");
+            info.classList.remove("d-none");
+
+        }
+    });
+
+})();
