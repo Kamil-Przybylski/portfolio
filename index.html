@@ -403,10 +403,10 @@
 
                 <div class="col-md-6">
                     <h4 class="pb-1 m-0">Napisz do mnie:</h4>
-                    <form id="contactForm" method="POST" class="row">
+                    <form id="contactForm" method="POST" class="row" action="https://formspree.io/kminus13@onet.eu">
                         <div class="form-group col-12 p-0 pb-1">
                             <label for="field-email">Email:</label>
-                            <input type="email" required name="email" id="field-email" class="form-item" placeholder="Podaj swój e-mail" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" data-error="Podaj prawidłowy adres email">
+                            <input type="email" required name="_replyto" id="field-email" class="form-item" placeholder="Podaj swój e-mail" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" data-error="Podaj prawidłowy adres email">
                         </div>
                         <div class="form-group col-12 p-0 pb-1">
                             <label for="field-message">Wiadomość:</label>
@@ -418,7 +418,7 @@
                             </div>
                         </div>
                         <div class="col-2 p-0 d-flex j-c-end">
-                            <button type="submit" class="btn btn-prim">Wyślij</button>
+                            <button type="submit" value="Send" class="btn btn-prim">Wyślij</button>
                         </div>
                     </form>
                 </div>
