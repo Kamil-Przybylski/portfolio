@@ -233,6 +233,10 @@ h6, .h6 {
   color: #ddd !important;
 }
 
+.text-white {
+  color: #fff;
+}
+
 .text-dark {
   color: #343a40 !important;
 }
@@ -1869,10 +1873,6 @@ h6, .h6 {
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-}
-
-.contact-item {
-  color: #ddd;
 }
 
 .contact-item p {

@@ -231,15 +231,12 @@
         if (checkFieldsErrors(inputs)) {
             var elements = [form.querySelector("input:not(:disabled)"), form.querySelector("textarea:not(:disabled)")];
 
-            var dataToSend = new FormData(),
-                dataToSend2 = {};
+            var dataToSend = {};
             elements.forEach(function(elem) {
-                dataToSend.append(elem.name, elem.value);
-                dataToSend2[elem.name] = elem.value;
+                dataToSend[elem.name] = elem.value;
             }); 
 
-            console.log(dataToSend2);
-            var data = JSON.stringify(dataToSend2);
+            var data = JSON.stringify(dataToSend);
 
             var btn = document.querySelector("button[type='submit']");
             btn.setAttribute("disabled", true);
