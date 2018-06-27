@@ -112,10 +112,9 @@
 
 .parallax {
     position: absolute;
-    backface-visibility: hidden;
-    will-change: scroll-position;
     width: 100%;
     height: 100%;
+    display: block;
 }
 
 .mobile-parallax {
@@ -201,63 +200,78 @@
     background-image: url("../img/paralax/1.png");
     background-position: bottom center;
     background-size: cover;
-    //will-change: transform;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
 .parallax2 {
     background-image: url("../img/paralax/2.png");
     background-position: bottom center;
     background-size: cover;
-    //will-change: transform;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
 .parallax3 {
     background-image: url("../img/paralax/3.png");
     background-position: bottom center;
     background-size: cover;
-    //will-change: transform;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
 .parallax4 {
     background-image: url("../img/paralax/4.png");
     background-position: bottom center;
     background-size: cover;
-    //will-change: transform;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
 .parallax5 {
     background-image: url("../img/paralax/5.png");
     background-position: bottom center;
     background-size: cover;
-    //will-change: transform;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
 .parallax6 {
     background-image: url("../img/paralax/6.png");
     background-position: bottom center;
     background-size: cover;
-    //will-change: transform;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
 .parallax7 {
     background-image: url("../img/paralax/7.png");
     background-position: bottom center;
     background-size: cover;
-    //will-change: transform;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
 .parallax8 {
     background-image: url("../img/paralax/8.png");
     background-position: bottom center;
     background-size: cover;
-    //will-change: transform;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
 .parallax9 {
     background-image: url("../img/paralax/9.png");
     background-position: bottom center;
     background-size: cover;
-    //will-change: transform;
 }
 
 
@@ -405,34 +419,61 @@
     }
 }
 
+.cube {
+    perspective: 500px;
+}
+
 .technologies {
     width: 300px;
-    height: 100%;
-    background: rgba($color: $color-main, $alpha: 0.6);
+    height: 300px;
     border-radius: 0.25rem;
+    position: relative;
     transition: transform 0.5s ease;
 }
 
-.technologies:hover {
-    transform: scale(1.03);
-}
-
 .img-technologies {
-    height: 200px;
-    width: auto;
+    height: 100%;
+    width: 100%;
+    background: rgba($color: $color-main, $alpha: 0.6);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(0deg);
+    transition: transform 0.8s ease-in-out;
+    backface-visibility: hidden;
 
     img {
-        padding: 0;
+        padding: 1rem 0;
         margin: 0;
-        max-height: 90%;
-        max-width: 90%;
+        max-height: 70%;
+        max-width: 70%;
     }
 }
 
+.description {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    background: rgba($color: $color-main, $alpha: 0.6);
+    transform: translate(-50%, -50%) rotateY(180deg);
+    transition: transform 0.8s ease-in-out;
+    backface-visibility: hidden;
+}
+
+.technologies:hover > .description {
+    transform: translate(-50%, -50%) rotateY(0deg)
+}
+
+.technologies:hover > .img-technologies {
+    transform: translate(-50%, -50%) rotateY(-180deg)
+}
+  
 //portfolio
 
 .card {
