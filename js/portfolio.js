@@ -177,7 +177,7 @@ btn.addEventListener("click", function() {
 */
 
 ///////////////////////////// PORTFOLIO APPS ///////////////////////////
-
+/*
 (function() {
 
     function makeMonth(monData) {
@@ -224,11 +224,12 @@ btn.addEventListener("click", function() {
     var cal = getData();
 
 })();
+*/
 
 new Vue({
     el: "#app",
     data: {
-        heading: "Hello World!",
-        text: "Witaj w świecie Vue.js!"
+        heading: "Vue.js!",
+        text: "Strona w trakcie realizacji"
     }
 });
