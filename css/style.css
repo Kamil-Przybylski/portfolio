@@ -1541,7 +1541,21 @@ h6, .h6 {
 
 .bg-color-second {
   background-color: #7b062f;
+  border-radius: 0.5rem;
+}
+
+.link-btn {
+  -webkit-appearance: button;
+     -moz-appearance: button;
+          appearance: button;
+  text-decoration: none;
+  -webkit-text-decoration-skip: objects;
   border-radius: 0.25rem;
+  color: white;
+}
+
+.link-btn:visited {
+  color: white;
 }
 
 #preloader {
@@ -1721,92 +1735,28 @@ h6, .h6 {
   background-image: url("../img/paralax/1.png");
   background-position: bottom center;
   background-size: cover;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  will-change: transform;
 }
 
 .parallax2 {
   background-image: url("../img/paralax/2.png");
   background-position: bottom center;
   background-size: cover;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  will-change: transform;
 }
 
 .parallax3 {
   background-image: url("../img/paralax/3.png");
   background-position: bottom center;
   background-size: cover;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  will-change: transform;
 }
 
 .parallax4 {
   background-image: url("../img/paralax/4.png");
   background-position: bottom center;
   background-size: cover;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  will-change: transform;
 }
 
 .parallax5 {
   background-image: url("../img/paralax/5.png");
-  background-position: bottom center;
-  background-size: cover;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  will-change: transform;
-}
-
-.parallax6 {
-  background-image: url("../img/paralax/6.png");
-  background-position: bottom center;
-  background-size: cover;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  will-change: transform;
-}
-
-.parallax7 {
-  background-image: url("../img/paralax/7.png");
-  background-position: bottom center;
-  background-size: cover;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  will-change: transform;
-}
-
-.parallax8 {
-  background-image: url("../img/paralax/8.png");
-  background-position: bottom center;
-  background-size: cover;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  will-change: transform;
-}
-
-.parallax9 {
-  background-image: url("../img/paralax/9.png");
   background-position: bottom center;
   background-size: cover;
 }
@@ -1876,7 +1826,7 @@ h6, .h6 {
   bottom: 0;
   min-width: 300px;
   height: 100vh;
-  padding: 50px 20px;
+  padding: 30px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2009,7 +1959,8 @@ h6, .h6 {
 .img-technologies img {
   padding: 1rem 0;
   margin: 0;
-  max-height: 70%;
+  height: 220px;
+  min-width: 180px;
 }
 
 .description {
@@ -2218,23 +2169,5 @@ h6, .h6 {
 .input-error {
   color: red;
   text-shadow: 0 0 1px #111;
-}
-
-.portfolio-window {
-  width: 100%;
-  height: 800px;
-  background: red;
-}
-
-.portfolio-info {
-  width: 100%;
-  height: 100px;
-  background: red;
-}
-
-.portfolio-menu {
-  width: 100%;
-  height: 100px;
-  background: red;
 }
 /*# sourceMappingURL=style.css.map */

@@ -14,9 +14,11 @@
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="fontello/css/fontello.css">
+    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
 
     <link rel="stylesheet" href="css/tuesday.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/app-style.css" type="text/css">
 
 </head>
 
@@ -78,12 +80,9 @@
 
         <article id="section1" class="container mb-5 p-1 bg-light">
 
-            <div class="row portfolio-window mb-1 a-i-center j-c-center"></div>
-                
-            <div class="row portfolio-info mb-1"></div>
-
-            <div class="row portfolio-menu a-i-center j-c-center">
-                <button class="btn btn-prim" id="app1">Pobierz</button>
+            <div id="app" v-cloak>
+                <h1>{{ heading }}</h1>
+                <p> {{ text }} </p>
             </div>
 
         </article>
@@ -176,7 +175,8 @@
     
     </footer>
     
-    <script src="js/script.js"></script>
+
+    <script src="js/vue.js"></script>
     <script src="js/portfolio.js"></script>
 
 </body>

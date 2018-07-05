@@ -3,8 +3,9 @@
 // Preloader
 
 (function () {
+
     var preloader = document.querySelector("#preloader"),
-        animation = preloader.dataset.animation;
+        animation = preloader.dataset.anim;
 
     window.addEventListener("load", function () {
         preloader.classList.add(animation);
@@ -19,43 +20,12 @@
 // PARALLAX
 
 (function () {
-    /*
-        var scrolled,
-            maxScrollItem = document.querySelector("#section1"),
-            maxScroll,
-            parallax,
-            el = document.querySelectorAll('.parallax-animate');
-    
-        var boxElement = document.querySelector(".container-max"),
-            steps = function() {
-                var arr = [];
-                for(var i = 0; i <= 200; i++) arr.push(i/200);
-                return arr;
-            },
-            options = {
-                threshold: steps()
-            };
-    
-        function  moveParallax() {     
-            scrolled = window.pageYOffset;
-            maxScroll = maxScrollItem.offsetTop;
-    
-            if (scrolled < maxScroll) {
-                for(var i = 0 ; i < el.length; i++) {
-                    parallax = scrolled * el[i].dataset.speed;
-                    el[i].style.transform = 'translate3d(0px, ' + parallax + 'px, 0px)';    
-                }
-            }
-        };
-    
-        var observer = new IntersectionObserver(moveParallax, options);
-        observer.observe(boxElement);
-    */
+       
     var scrolled,
+        maxScroll,  
         maxScrollItem = document.querySelector("#section1"),
-        maxScroll,
-        parallax,
         el = document.querySelectorAll('.parallax-animate'),
+        speed = [0.85, 0.65, 0.4, 0.2],
         scroll = window.requestAnimationFrame ||
             window.webkitRequestAnimationFrame ||
             window.mozRequestAnimationFrame ||
@@ -64,14 +34,14 @@
             function (callback) { window.setTimeout(callback, 1000 / 60) },
         lastPos = 0;
 
+
     function moveParallax() {
         scrolled = window.pageYOffset;
         maxScroll = maxScrollItem.offsetTop;
 
         if (scrolled < maxScroll) {
             for (var i = 0; i < el.length; i++) {
-                parallax = scrolled * el[i].dataset.speed;
-                el[i].style.transform = 'translate3d(0px, ' + parallax + 'px, 0px)';
+                el[i].style.transform = 'translate3d(0, ' + scrolled * speed[i] + 'px, 0)';
             }
         }
     };
@@ -89,28 +59,38 @@
 
     };
 
-    loop();
+    var isIE = /*@cc_on!@*/false || !!document.documentMode,
+        isEdge = !isIE && !!window.StyleMedia;
+    
+    if (isIE || isEdge) {
+        return;
+    } else {
+        loop(); 
+    }
+     
+     /*
+    var scrolled,
+        maxScroll,
+        maxScrollItem = document.querySelector("#section1"),
+        el = document.querySelectorAll('.parallax-animate');
 
-    /*
-        var scrolled,
-            maxScrollItem = document.querySelector("#section1"),
-            maxScroll,
-            parallax,
-            el = document.querySelectorAll('.parallax-animate');
-    
-        window.addEventListener("scroll", function() {
-            scrolled = window.pageYOffset;
-            maxScroll = maxScrollItem.offsetTop;
-    
-            if (scrolled < maxScroll) {
-                el.forEach(function (ele) {
-                    parallax = scrolled * ele.dataset.speed;
-                    ele.style.transform = 'translate3d(0px, ' + parallax + 'px, 0px)';
-                })
+    var speed = [];
+    for (var i = 0; i < el.length; i++) {
+        speed.push(el[i].dataset.speed);
+    };
+
+    window.addEventListener("scroll", function() {
+        scrolled = window.pageYOffset;
+        maxScroll = maxScrollItem.offsetTop;
+
+        if (scrolled < maxScroll) {
+            for (var i = 0; i < el.length; i++) {
+                el[i].style.transform = 'translate3d(0px, ' + scrolled * speed[i] + 'px, 0px)';
             }
-    
-        });
-    */
+        }
+
+    });
+     */
 })();
 
 
@@ -159,58 +139,50 @@
 
 (function () {
     
-    var items = document.querySelectorAll("[data-animation]");
+    var items = document.querySelectorAll("[data-animation]"),
+        itemOffsetTop,
+        itemHeight,
+        scrolled,
+        win_height_padded,
+        animation = [],
+        repeat = [];
+
+    items.forEach(function(item) {
+        animation.push(item.dataset.animation);
+        repeat.push(item.dataset.repeat);
+    });
 
     function revealOnScroll() {
-        var scrolled = window.scrollY,
-            win_height_padded = window.innerHeight;
 
-        items.forEach(function (i) {
-            var offsetTop = i.offsetTop,
-                animation = i.dataset.animation,
-                repeat = i.dataset.repeat,
-                itemHeight = i.clientHeight;
+        scrolled = window.scrollY;
+        win_height_padded = window.innerHeight;
 
-            if ((scrolled + win_height_padded >= offsetTop)
-                &&
-                (scrolled <= offsetTop + itemHeight)) {
-                i.classList.add(animation);
-            } else if (repeat) {
-                i.classList.remove(animation);
+        items.forEach(function (item, i) {
+            itemOffsetTop = item.offsetTop;
+            itemHeight = item.clientHeight;
+
+            if ((scrolled + win_height_padded >= itemOffsetTop)
+            &&
+            (scrolled <= itemOffsetTop + itemHeight)) {
+                item.classList.add(animation[i]);
+            } else if (repeat[i]) {
+                item.classList.remove(animation[i]);
             }
 
-        })
+        });
 
     }
+
+    var isFirefox = typeof InstallTrigger !== 'undefined',
+        isIE = /*@cc_on!@*/false || !!document.documentMode,
+        isEdge = !isIE && !!window.StyleMedia;
     
-    window.addEventListener("scroll", revealOnScroll);
-    
-    /*
-    var items = document.querySelectorAll("[data-animation]"),
-        options = {
-            threshold: [0]
-        };
-
-    function revealOnScroll(entries) {
-        var item = entries[0].target,
-            onScreen = entries[0].isIntersecting,
-            animation = item.dataset.animation;
-
-        console.log(item);
-
-        if(onScreen) {
-            item.classList.add(animation);
-        } else {
-            item.classList.remove(animation);
-        }
-    };
-
-    var observer = new IntersectionObserver(revealOnScroll, options);
-    
-    for(var i = 0; i < items.length; i++) {
-        observer.observe(items[i])
+    if (isFirefox || isIE || isEdge) {
+        alert("Na Twojej przeglądarce animacje mogą działać niepoprawnie. Dla lepszej wydajności niektóre animacje zostały wyłączone");
+        return;
+    } else {
+        window.addEventListener("scroll", revealOnScroll);
     }
-    */
 
 })();
 

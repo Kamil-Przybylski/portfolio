@@ -1,0 +1,5 @@
+{
+    "1": {"name": "styczeń", "days": 31, "firstDay": 1},
+    "2": {"name": "luty", "days": 28, "firstDay": 4},
+    "3": {"name": "marzec", "days": 31, "firstDay": 4}
+}
