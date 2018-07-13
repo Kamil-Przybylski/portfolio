@@ -14,18 +14,15 @@
 
 .bg-light {
     background-color: $color-main-2;
-    box-shadow: 0 0 5px #111;
     border-radius: 0.25rem;
 }
 
 .bg-color-second-dark {
     background-color: $color-second-2;
-    border-radius: 0.25rem;
 }
 
 .bg-color-second {
     background-color: $color-second;
-    border-radius: 0.5rem;
 }
 
 .link-btn {
@@ -266,8 +263,14 @@
     border-top: 5px solid white;
     bottom: 20px;
     left: 20px;
+    opacity: 0.8;
 
     transition: 0.3s transform linear;
+}
+
+.nav-btn:hover {
+    cursor: pointer;
+    opacity: 1;
 }
 
 .nav-btn::before, .nav-btn::after {
@@ -353,15 +356,13 @@
 }
 
 .img-about {
-    box-shadow: 5px 5px 5px #111;
+    box-shadow: 0px 0px 5px #111;
     border-radius: 0.25rem;
 }
 
 .article1 {
-    text-shadow: 3px 3px 5px #111;
+    text-shadow: 1px 1px 1px #111;
     border-top: 1px solid $color-second;
-    border-left: 1px solid $color-second;
-    box-shadow: 1px 1px 15px #000;
 }
 
 .rectangle {

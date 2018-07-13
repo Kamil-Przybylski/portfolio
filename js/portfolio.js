@@ -1,21 +1,5 @@
 'use strict';
 
-// Preloader
-
-(function () {
-    var preloader = document.querySelector("#preloader"),
-        animation = preloader.dataset.animation;
-
-    window.addEventListener("load", function () {
-        preloader.classList.add(animation);
-        preloader.addEventListener("animationend", function () {
-            preloader.classList.remove(animation);
-            preloader.classList.add("d-none");
-        });
-    })
-
-})();
-
 // NAVIGATION MENU
 
 (function () {
@@ -135,101 +119,119 @@
 
 })();
 
-/*
-var btn = document.querySelector("#app1"),
-    xhr = new XMLHttpRequest(),
-    appWindow = document.querySelector(".portfolio-window"),
-    app1,
-    error;
+///////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////APLICATIONS//////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
 
-btn.addEventListener("click", function() {
+//Memory Test - VueJS
 
-    xhr.open("GET", "app1.html");
-    xhr.send();
+(function () {
 
-    xhr.onreadystatechange = function() {
+    new Vue({
+        el: "#app",
+        data: {
+            number: 8,
+            cardId: [],
+            cards: [],
+            correct: [],
+            checked: {},
+            score: 0,
+            counter: 0,
+            lock: false,
+            oneVisible: false,
+            end: false,
+            start: false
+        },
+        methods: {
 
-        if(document.querySelector("#error")) {
-            document.querySelector("#error").remove(); 
-        }
+            createCards: function() {
+                var j, x;
 
-        if (this.readyState == 4 && this.status == 200) {
+                this.cardId = [];
+                this.cards = [];
+                this.correct = [];
+                this.checked = {};
+                this.score = 0;
+                this.counter = 0;
+                this.lock = false,
+                this.oneVisible = false,
+                this.end = false;
+                this.start = true;
 
-            app1 = document.createElement('div');
-            app1.id = "app1"
-            app1.innerHTML = xhr.response;
-            appWindow.appendChild(app1);   
+                for (var i = 1; i < (this.number / 2) + 1; i++) {
+                    this.cardId.push(i);
+                    this.cardId.push(i);
+                    this.correct.push(false)
+                }
+                for (var i = this.cardId.length - 1; i > 0; i--) {
+                    j = Math.floor(Math.random() * (i + 1));
+                    x = this.cardId[i];
+                    this.cardId[i] = this.cardId[j];
+                    this.cardId[j] = x;
+                }
+                for (var i = 0; i < this.cardId.length; i++) {
+                    var crd = {
+                        id: i,
+                        rotated: false,
+                    }
+                    this.cards.push(crd);
+                }
+            },
 
-        } else if (this.readyState == 4) {
+            success: function() {
+                this.end = true;
+                this.start = false;
+            },
 
-            if (!appWindow.firstElementChild) {
-                error = document.createElement('div');
-                error.id = error;
-                error.innerHTML = "<h1>Wystąpił błąd serwera...</h1>"
-                error.classList.add("text-center");
-                appWindow.appendChild(error);
-            }
+            hit: function(id) {
+                setTimeout(function(){
+                    this.correct[id] = true;
+                    this.lock = false;
+                    this.score++;
+                    this.$forceUpdate();
+                    if (this.score == this.number/2) {
+                        this.success();
+                    }
+                }.bind(this), 1500);
+            },
 
-        }
-    }
+            miss: function(i) {
+                setTimeout(function(){
+                    this.cards[this.checked.i].rotated = false;
+                    this.cards[i].rotated = false;
+                    this.lock = false;
+                    this.$forceUpdate();
+                }.bind(this), 1500);
+            },
 
-});
-*/
+            showCard: function(id, i) {
+                
+                if(!this.cards[i].rotated && !this.lock) {
+                    this.cards[i].rotated = true;
 
-///////////////////////////// PORTFOLIO APPS ///////////////////////////
-/*
-(function() {
+                    if(this.oneVisible) {
+                        //second card
+                        this.counter++
+                        this.oneVisible = false;
+                        this.lock = true;
 
-    function makeMonth(monData) {
-        var month = new Array(42).fill(0),
-            day = 1;
-
-        month.forEach(function(v, i) {
-            if(i >= monData.firstDay - 1 && day <= monData.days) {
-                month[i] = day++;
-            }
-        });
-
-        return month;
-    }
-
-    function MakeMonth (monData) {
-        this.name = monData.name;
-        this.days = makeMonth(monData);
-    }
-
-
-    function makeCalendar(calData) {
-        var myCalendar = {};
-        for(var val in calData) {
-            myCalendar[val] = new MakeMonth(calData[val])
-        }
-        return myCalendar;
-    }
-
-    function getData() {
-        var xhr = new XMLHttpRequest(),
-            calData;
+                        if(this.checked.id == id) {
+                            this.hit(id);      
+                        } else {
+                            this.miss(i);
+                        }
     
-        xhr.open("GET", "calendar.txt");
-        xhr.send();
-        xhr.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                calData = JSON.parse(xhr.response);
-                return makeCalendar(calData);
-            }
-        }
-    };
+                    } else {
+                        //first card
+                        this.oneVisible = true;
+                        this.checked.id = id;
+                        this.checked.i = i;
+    
+                    }
+                }
 
-    var cal = getData();
+            }
+        },
+    })
 
 })();
-*/
-
-new Vue({
-    el: "#app",
-    data: {
-        heading: "Vue.js!",
-        text: "Strona w trakcie realizacji"
-    }
-});

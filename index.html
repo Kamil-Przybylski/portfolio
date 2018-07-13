@@ -11,8 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="referrer" content="origin" />
 
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=latin-ext" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Lato&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="fontello/css/fontello.css">
     <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
 
@@ -22,7 +21,7 @@
 </head>
 
 <body>
-
+    <h5 class="sr-only">Strona</h5>
     <!--[if lt IE 7]>
         <p class="browsehappy">Używasz <strong>przestarzałej</strong> przeglądarki. Proszę <a href="https://www.google.pl/chrome/index.html">uaktualnij swoją przeglądarke</a> aby strona wyświetlała się poprawnie</p>
     <![endif]-->
@@ -73,6 +72,7 @@
         </div>
 
         <nav class="navigation">
+            <h5 class="sr-only">Nawigacja</h5>
             <div id="navbar" class="navbar animated d-none">
                 <p class="nav-header h2 special-font m-0"><a href="#section0">Kamil Przybylski</a></p>
                 <ul class="nav m-0">
@@ -126,10 +126,10 @@
         </article>
 
         <!-- ABOUT ME more -->
-
         <article class="container o-hidden mb-5 p-0">
+            <h5 class="sr-only">O mnie - więcej</h5>
             
-            <section class="row col-12 mv-3 ph-0 pv-1 br-b bg-light animated1" data-animation="tdFadeInRight" data-repeat="true">
+            <section class="row col-12 mv-3 ph-0 pv-1 bg-light animated1" data-animation="tdFadeInRight" data-repeat="true">
                 <div class="col-lg-6 p-1">
                     <img src="img/education.jpeg" alt="education" class="img-about img-responsive w-100">
                 </div>
@@ -140,7 +140,7 @@
                 </div>
             </section>
 
-            <section class=" row col-lg-12 mv-3 ph-0 pv-1 br-b bg-light animated1" data-animation="tdFadeInLeft" data-repeat="true">
+            <section class=" row col-lg-12 mv-3 ph-0 pv-1 bg-light animated1" data-animation="tdFadeInLeft" data-repeat="true">
                 <div class="col-lg-6 text-right p-1">
                     <h3 class="mb-1">Zawód<span class="rectangle ml-1 bg-color-second-dark"></span></h3>
                     <p>Po studiach rozpocząłem prace jako asystent projektanta konstrukcji w biurze projektowym KB-Projekty Konstrukcyjne. Zajmowałem się obliczeniami statycznymi konstrukcji, rysunkami budowlanymi i wykonawczymi oraz ekspertyzami.</p>
@@ -151,7 +151,7 @@
                 </div>
             </section>
 
-            <section class=" row col-12s mv-0 ph-0 pv-1 br-b bg-light animated1" data-animation="tdFadeInRight" data-repeat="true">
+            <section class=" row col-12s mv-0 ph-0 pv-1 bg-light animated1" data-animation="tdFadeInRight" data-repeat="true">
                 <div class="col-lg-6 p-1">
                     <img src="img/programming.jpg" alt="education" class="img-about img-responsive w-100">
                 </div>
@@ -180,7 +180,7 @@
                 <h2 class="text-center br-b pb-1">Technologie</h2>
             </header>
 
-            <div class="article2">
+            <section class="article2">
                 <div class="technologies-container row j-c-around">
 
                     <div class="cube p-1 animated" data-animation="tdShrinkIn" data-repeat="true">
@@ -286,16 +286,16 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="cube p-1 animated" data-animation="tdShrinkIn" data-repeat="true">
                         <div class="technologies text-center p-1">
                             <div class="img-technologies">
-                                <img src="img/technologies/vsc.png" alt="Visual Studio Code">
-                                <h3>Visual Studio <br> Code</h3>
+                                <img src="img/technologies/vsc.png" alt="Git">
+                                <h1 class="h3">Visual Studio Code</h1>
                             </div>
                             <div class="description p-2">
-                                <h3>Visual Studio <br> Code</h3>
-                                <p class="mt-1">Wszystkie swoje aplikacje piszę w programie Visual Studio Code. Wykorzystuję dodatkowe plugin'y przyśpieszające pracę typu Emmet, Snippets, Live Server, Live SASS Compiler, Debugger for Chrome itp.</p>
+                                <h1 class="h4">Visual Studio Code</h1>
+                                <p class="mt-1">Wszystkie aplikacje piszę w programie Visual Studio Code. Wykorzystuję dodatkowe plugin'y przyśpieszające pracę typu Emmet, Snippets, Live Server, Live SASS Compiler, Debugger for Chrome itp.</p>
                             </div>
                         </div>
                     </div>
@@ -327,7 +327,7 @@
                     </div>
 
                 </div>
-            </div>
+            </section>
         </article>
 
         <!-- PORTFOLIO -->
@@ -417,11 +417,12 @@
     </main>
 
     <footer id="section4" class="container-fluid bg-color-second-dark text-white">
+        <h5 class="sr-only">Stopka</h5>
         <div class="container row">
 
             <div class="row pt-2 w-100 animated1" data-animation="tdFadeIn" data-repeat="true">
 
-                <div class="col-md-6">
+                <section class="col-md-6">
                     <h4 class="mb-1">Kontakt:</h4>
                     <div class="row mb-1">
                         <div class="contact-item col-1 p-0"><i class="icon-phone-circled contact-icon"></i></div>
@@ -435,9 +436,9 @@
                         <div class="contact-item col-1 p-0"><i class="icon-home-circled contact-icon"></i></div>
                         <div class="contact-item col-11 p-0"><p>Przyjmę oferty pracy z Krakowa</p></div>
                     </div>
-                </div>
+                </section>
 
-                <div class="col-md-6">
+                <section class="col-md-6">
                     <h4 class="pb-1 m-0">Napisz do mnie:</h4>
                     <form id="contactForm" method="POST" class="row" action="https://formspree.io/kminus13@onet.eu">
                         <div class="form-group col-12 p-0 pb-1">
@@ -457,11 +458,11 @@
                             <button target="_blank" type="submit" value="Send" class="btn btn-prim">Wyślij</button>
                         </div>
                     </form>
-                </div>
+                </section>
 
             </div>
 
-            <div class="row pv-1 w-100 animated1" data-animation="tdFadeIn" data-repeat="true">
+            <section class="row pv-1 w-100 animated1" data-animation="tdFadeIn" data-repeat="true">
 
                 <div class="portals col-md-6">
                     <h6 class="mb-1">Znajdziesz mnie na:</h6>
@@ -474,12 +475,12 @@
                     <a target="_blank" href="https://github.com/Kamil-Przybylski">
                         <i class="icon-github-circled-alt2 portal-icon p-0"></i>
                     </a>
-                    <h6 class="pt-1">
+                    <p class="pt-1 h6">
                         Pobierz moje CV 
                         <a target="_blank" href="CV - Kamil Przybylski - Front-End.pdf">
                             <i class="icon-download-alt"></i>
                         </a> 
-                    </h6>
+                    </p>
                 </div>
     
                 <div class="col-md-6">
@@ -487,18 +488,19 @@
                     <p>Strona powstała z wykorzystaniem HTML5, CSS3 z SASS, JS oraz autorskiej biblioteki CSS wzorowanej na Bootstrap'ie.</p>
                 </div>
 
-            </div>
+            </section>
 
         </div>
 
-        <div class="row text-center bg-color-second pv-1 br-t">
+        <section class="row text-center bg-color-second pv-1">
+            <h5 class="sr-only">Info</h5>
             <div class="col-lg-8 offset-lg-2">
                 <p class="ph-1 pv-0"><small>Wyrażam zgodę na przetwarzanie danych osobowych zawartych w mojej aplikacji dla potrzeb niezbędnych do realizacji procesów rekrutacyjnych zgodnie z ustawą z dnia 29 sierpnia1997 r. o ochronie danych osobowych (tj. Dz. U. z 2015 r. poz. 2135, 2281, z 2016 r. poz. 195, 677).</small></p>
             </div>
             <div class="col-12">
                 <p class="p-0 m-0"><small>&copy; Coppyright by Kamil Przybylski 2018</small></p>
             </div>
-        </div>
+        </section>
 
     </footer>
 

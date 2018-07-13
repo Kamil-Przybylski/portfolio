@@ -23,26 +23,11 @@
 </head>
 
 <body>
+    <h5 class="sr-only">Strona</h5>
 
     <!--[if lt IE 7]>
         <p class="browsehappy">Używasz <strong>przestarzałej</strong> przeglądarki. Proszę <a href="https://www.google.pl/chrome/index.html">uaktualnij swoją przeglądarke</a> aby strona wyświetlała się poprawnie</p>
     <![endif]-->
-
-    <div id="preloader" class="animated" data-animation="tdFadeOut">
-        <!--[if lt IE 7]>
-            <p class="browsehappy">Używasz <strong>przestarzałej</strong> przeglądarki. Proszę <a href="https://www.google.pl/chrome/index.html">uaktualnij swoją przeglądarke</a> aby strona wyświetlała się poprawnie</p>
-        <![endif]-->    
-        <div class="preloader-title text-center cv-text special-font">
-            <p class="h3">Curriculum Vitae</p>
-            <p class="h4">Kamil Przybylski</p>
-            <p class="h5">~ front-end developer</p>
-        </div>
-        <div class="load p-0 m-0">
-            <div class="icon-spin">
-                <i class="icon-spin6 spiner"></i>
-            </div>
-        </div>
-    </div>
 
     <header id="section0" class="mb-2">
 
@@ -62,6 +47,7 @@
         </div>
 
         <nav class="navigation">
+            <h5 class="sr-only">Nawigacja</h5>
             <div id="navbar" class="navbar animated d-none">
                 <p class="nav-header h2 special-font"><a href="#section0">Kamil Przybylski</a></p>
                 <ul class="nav">
@@ -85,25 +71,68 @@
     
     </header>
 
+    <!-- /////////////////////////////////////////////////////////////////////// -->
+
     <main>
 
-        <article id="section1" class="container mb-5 p-1 bg-light">
+        
+        <article class="container mb-5 p-1 bg-light">
+            <h1 class="special-font">Test Pamięci</h1>
+            <p>Aplikacja stworzona za pomocą VueJS. Kod dostępny w źródle.</p>
+            <hr>
+            
+            <div id="app">
+                <div class="w-100 mt-1 mb-2">
+                    <div class="text-center">
+                        <label for="select">Ilość kart: </label>
+                        <select id="select" class="select" v-model="number" :disabled="start">
+                            <option value="8">8</option>
+                            <option value="12">12</option>
+                            <option value="16">16</option>
+                        </select>
+                        <button class="btn btn-prim" @click="createCards" :disabled="start">Stwórz grę</button>
+                    </div>
+                </div>
+    
+                <div class="board">
 
-            <div id="app" v-cloak>
-                <h1>{{ heading }}</h1>
-                <p> {{ text }} </p>
+                    <div class="success col-12" v-if="end">
+                        <h1 class="pb-1 special-font">Wygrana!</h1>
+                        <p class="mb-0">Wykorzystano: {{counter}} tur</p>
+                        <p>Ilość kart: {{number}}</p>
+                    </div>
+
+                    <div class="row" v-else="end">
+                        <div class="game-card col-3" v-for="(id, i) in cardId" :data-target="'card-' + i" :class="{ 'correct': correct[id], 'show-card': cards[i].rotated }">
+                            <div class="reverse">
+                                <img @click.self="showCard(id, i)" src="img/game-1/reverse.jpeg" alt="1">
+                            </div>
+                            <div class="front">
+                                <img :src="'img/game-1/' + id + '.jpeg'" alt="1">
+                            </div>
+                        </div>
+                        <div class="counter col-12" v-show="start">
+                            <p class="text-center pt-2">Tura: {{ counter }}</p>
+                        </div>
+                    </div>
+                    
+                </div>
+
             </div>
 
         </article>
 
     </main>
 
+    <!-- /////////////////////////////////////////////////////////////////////// -->
+
     <footer id="section4" class="container-fluid bg-color-second-dark text-white mt-5">
+        <h5 class="sr-only">Stopka</h5>
         <div class="container row">
 
             <div class="row pt-2 w-100 animated1" data-animation="tdFadeIn" data-repeat="true">
 
-                <div class="col-md-6">
+                <section class="col-md-6">
                     <h4 class="mb-1">Kontakt:</h4>
                     <div class="row mb-1">
                         <div class="contact-item col-1 p-0"><i class="icon-phone-circled contact-icon"></i></div>
@@ -117,9 +146,9 @@
                         <div class="contact-item col-1 p-0"><i class="icon-home-circled contact-icon"></i></div>
                         <div class="contact-item col-11 p-0"><p>Przyjmę oferty pracy z Krakowa</p></div>
                     </div>
-                </div>
+                </section>
 
-                <div class="col-md-6">
+                <section class="col-md-6">
                     <h4 class="pb-1 m-0">Napisz do mnie:</h4>
                     <form id="contactForm" method="POST" class="row" action="https://formspree.io/kminus13@onet.eu">
                         <div class="form-group col-12 p-0 pb-1">
@@ -136,51 +165,52 @@
                             </div>
                         </div>
                         <div class="col-2 p-0 d-flex j-c-end">
-                            <button type="submit" value="Send" class="btn btn-prim">Wyślij</button>
+                            <button target="_blank" type="submit" value="Send" class="btn btn-prim">Wyślij</button>
                         </div>
                     </form>
-                </div>
+                </section>
 
             </div>
 
-            <div class="row pv-1 w-100 animated1" data-animation="tdFadeIn" data-repeat="true">
+            <section class="row pv-1 w-100 animated1" data-animation="tdFadeIn" data-repeat="true">
 
-                <div class="portals col-md-6">
-                    <h6 class="mb-1">Znajdziesz mnie na:</h6>
-                    <a href="https://www.facebook.com/kyufkhgfv">
-                        <i class="icon-facebook-circled-1 portal-icon p-0"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/kamil-przybylski-113295147/">
-                        <i class="icon-linkedin-circled-1 portal-icon p-0"></i>
-                    </a>
-                    <a href="https://github.com/Kamil-Przybylski">
-                        <i class="icon-github-circled-alt2 portal-icon p-0"></i>
-                    </a>
-                    <h6 class="pt-1">
-                        Pobierz moje CV 
-                        <a href="#">
-                            <i class="icon-download-alt"></i>
-                        </a> 
-                    </h6>
-                </div>
+                    <div class="portals col-md-6">
+                        <h6 class="mb-1">Znajdziesz mnie na:</h6>
+                        <a target="_blank" href="https://www.facebook.com/kyufkhgfv">
+                            <i class="icon-facebook-circled-1 portal-icon p-0"></i>
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/in/kamil-przybylski-113295147/">
+                            <i class="icon-linkedin-circled-1 portal-icon p-0"></i>
+                        </a>
+                        <a target="_blank" href="https://github.com/Kamil-Przybylski">
+                            <i class="icon-github-circled-alt2 portal-icon p-0"></i>
+                        </a>
+                        <p class="pt-1 h6">
+                            Pobierz moje CV 
+                            <a target="_blank" href="CV - Kamil Przybylski - Front-End.pdf">
+                                <i class="icon-download-alt"></i>
+                            </a> 
+                        </p>
+                    </div>
     
                 <div class="col-md-6">
                     <p>Przyjmuję oferty pracy na stanowisko (junior) front-end developer. Podejmę się pracy na pełny, niepełny etat lub staż.</p>
                     <p>Strona powstała z wykorzystaniem HTML5 SASS Vue.js oraz autorskiej biblioteki CSS wzorowanej na Bootstrap'ie.</p>
                 </div>
 
-            </div>
+            </section>
 
         </div>
 
-        <div class="row text-center bg-color-second pv-1 br-t">
+        <section class="row text-center bg-color-second pv-1 br-t">
+            <h5 class="sr-only">Info</h5>
             <div class="col-lg-8 offset-lg-2">
                 <p class="ph-1 pv-0"><small>Wyrażam zgodę na przetwarzanie danych osobowych zawartych w mojej aplikacji dla potrzeb niezbędnych do realizacji procesów rekrutacyjnych zgodnie z ustawą z dnia 29 sierpnia1997 r. o ochronie danych osobowych (tj. Dz. U. z 2015 r. poz. 2135, 2281, z 2016 r. poz. 195, 677).</small></p>
             </div>
             <div class="col-12">
                 <p class="p-0 m-0"><small>&copy; Coppyright by Kamil Przybylski 2018</small></p>
             </div>
-        </div>
+        </section>
     
     </footer>
     
