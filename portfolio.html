@@ -102,7 +102,7 @@
                     </div>
 
                     <div class="row" v-else="end">
-                        <div class="game-card col-3" v-for="(id, i) in cardId" :data-target="'card-' + i" :class="{ 'correct': correct[id], 'show-card': cards[i].rotated }">
+                        <div class="game-card col-4 col-md-3" v-for="(id, i) in cardId" :data-target="'card-' + i" :class="{ 'correct': correct[id], 'show-card': cards[i].rotated }">
                             <div class="reverse">
                                 <img @click.self="showCard(id, i)" src="img/game-1/reverse.jpeg" alt="1">
                             </div>
