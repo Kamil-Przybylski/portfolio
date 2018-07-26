@@ -1,6 +1,13 @@
+@import "_variables.scss";
+
 [v-cloak] {
     display: none;
 }
+
+///////////////////////////////////////////////////////////////
+//////////////////////////MEMORY TEST//////////////////////////
+///////////////////////////////////////////////////////////////
+
 
 .board {
     display: flex;
@@ -82,8 +89,64 @@
 
 .success {
     text-align: center;
-    padding-top: 200px;
-    padding-bottom: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
+///////////////////////////////////////////////////////////////
+/////////////////////////HEROES CARDS//////////////////////////
+///////////////////////////////////////////////////////////////
 
+.hr {
+    border: 2px solid red;
+    padding: 0;
+    margin: 0;
+}
+
+.board-h {
+    overflow: hidden;
+}
+
+.area {
+    background-color: #fff;
+    margin: auto;
+}
+
+.cards {
+    width: 40px;
+    height: 40px;
+}
+
+@media (min-width: 768px) {
+    .cards {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+.arena {
+    width: 80px;
+    height: 80px;
+}
+
+@media (min-width: 768px) {
+    .arena {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.hero {
+    width: 140px;
+    height: 140px;
+    background: red;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        width: 160px;
+        height: 160px;
+    }
+}
